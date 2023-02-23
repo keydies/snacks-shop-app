@@ -1,0 +1,370 @@
+$legacy-support-for-ie: false !default;
+$normalized-font-family: sans-serif !default;
+$normalize-heading: true !default;
+$h1-font-size: 2em !default;
+$h2-font-size: 1.5em !default;
+$h3-font-size: 1.17em !default;
+$h4-font-size: 1em !default;
+$h5-font-size: 0.83em !default;
+$h6-font-size: 0.75em !default;
+$h1-margin: 0.67em 0 !default;
+$h2-margin: 0.83em 0 !default;
+$h3-margin: 1em 0 !default;
+$h4-margin: 1.33em 0 !default;
+$h5-margin: 1.67em 0 !default;
+$h6-margin: 2.33em 0 !default;
+$background: #fff !default;
+$color: #000 !default;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+
+  @if $legacy-support-for-ie {
+    *display: inline;
+    *zoom: 1;
+  }
+}
+
+audio:not([controls]) {
+  display: none;
+
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+html {
+  color: $color;
+  background: $background;
+  text-size-adjust: 100%;
+
+  @if $legacy-support-for-ie {
+    font-size: 100%;
+  }
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: $normalized-font-family;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  background: transparent;
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+@if $normalize-heading == true {
+  h1 {
+    margin: $h1-margin;
+
+    font-size: $h1-font-size;
+  }
+
+  h2 {
+    margin: $h2-margin;
+
+    font-size: $h2-font-size;
+  }
+
+  h3 {
+    margin: $h3-margin;
+
+    font-size: $h3-font-size;
+  }
+
+  h4 {
+    margin: $h4-margin;
+
+    font-size: $h4-font-size;
+  }
+
+  h5 {
+    margin: $h5-margin;
+
+    font-size: $h5-font-size;
+  }
+
+  h6 {
+    margin: $h6-margin;
+
+    font-size: $h6-font-size;
+  }
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+@if $legacy-support-for-ie {
+  blockquote {
+    margin: 1em 40px;
+  }
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  color: #000;
+  background: #ff0;
+}
+
+@if $legacy-support-for-ie {
+  p,
+  pre {
+    margin: 1em 0;
+  }
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+
+  @if $legacy-support-for-ie {
+    _font-family: 'courier new', monospace;
+  }
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: '\201C''\201D''\2018''\2019';
+
+  &::before,
+  &::after {
+    content: '';
+    content: none;
+  }
+}
+
+@if $legacy-support-for-ie {
+  q {
+    quotes: none;
+  }
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  position: relative;
+
+  vertical-align: baseline;
+
+  font-size: 75%;
+  line-height: 0;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+@if $legacy-support-for-ie {
+  dl,
+  menu,
+  ol,
+  ul {
+    margin: 1em 0;
+  }
+}
+
+@if $legacy-support-for-ie {
+  dd {
+    margin: 0 0 0 40px;
+  }
+}
+
+@if $legacy-support-for-ie {
+  menu,
+  ol,
+  ul {
+    padding: 0 0 0 40px;
+  }
+}
+
+nav {
+  ul,
+  ol {
+    @if $legacy-support-for-ie {
+      list-style-image: none;
+    }
+  }
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+@if $legacy-support-for-ie {
+  form {
+    margin: 0;
+  }
+}
+
+fieldset {
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+
+  border: 1px solid #c0c0c0;
+}
+
+legend {
+  padding: 0;
+
+  white-space: normal;
+
+  border: 0;
+
+  @if $legacy-support-for-ie {
+    *margin-left: -7px;
+  }
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+
+  vertical-align: baseline;
+
+  font-family: inherit;
+  font-size: 100%;
+
+  @if $legacy-support-for-ie {
+    *vertical-align: middle;
+  }
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  appearance: button;
+
+  cursor: pointer;
+
+  @if $legacy-support-for-ie {
+    *overflow: visible;
+  }
+}
+
+button[disabled],
+input[disabled],
+button,
+input {
+  cursor: default;
+
+  &::-moz-focus-inner {
+    padding: 0;
+
+    border: 0;
+  }
+}
+
+textarea {
+  overflow: auto;
+
+  vertical-align: top;
+}
+
+table {
+  border-spacing: 0;
+
+  border-collapse: collapse;
+}
+
+input {
+  &[type='search'] {
+    appearance: textfield;
+
+    box-sizing: content-box;
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      appearance: none;
+    }
+  }
+
+  &[type='checkbox'],
+  &[type='radio'] {
+    box-sizing: border-box;
+    padding: 0;
+
+    @if $legacy-support-for-ie {
+      *width: 13px;
+      *height: 13px;
+    }
+  }
+}

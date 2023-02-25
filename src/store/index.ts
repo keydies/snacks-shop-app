@@ -1,13 +1,9 @@
-import { AnyAction, combineReducers, configureStore, EmptyObject, ThunkMiddleware } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 
 const rootReducer = combineReducers({});
 
-export const setupStore = (): ToolkitStore<
-  EmptyObject,
-  AnyAction,
-  [ThunkMiddleware<EmptyObject, AnyAction, undefined>]
-> => {
+export const setupStore = (): ToolkitStore => {
   return configureStore({
     reducer: rootReducer,
   });
